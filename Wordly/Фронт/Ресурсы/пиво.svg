@@ -1,0 +1,136 @@
+<svg width="128" height="128" viewBox="50 60 140 180"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Группа бокала -->
+  <g id="beer">
+
+    <!-- Периодическое покачивание, запускается после пузырьков -->
+    <animateTransform
+      id="shake"
+      attributeName="transform"
+      type="rotate"
+      values="
+        0 120 150;
+        -12 120 150;
+        12 120 150;
+        -4 120 150;
+        4 120 150;
+        -3 120 150;
+        3 120 150;
+        -2 120 150;
+        2 120 150;
+        -1 120 150;
+        1 120 150;
+        0 120 150"
+      dur="2.2s"
+      begin="0s; bubblesEnd.end+1s"
+      fill="freeze"
+    />
+
+    <!-- Ручка -->
+    <path d="
+      M 150 105
+      C 168 105, 180 118, 180 135
+      C 180 152, 168 165, 150 165
+      L 147 158
+      C 160 158, 170 147, 170 135
+      C 170 123, 160 112, 147 112
+      Z"
+      fill="#f0f0ff" stroke="#c5c5d5" stroke-width="2"/>
+
+    <!-- Стакан -->
+    <rect x="60" y="80" width="90" height="130" rx="10" ry="10"
+          fill="url(#glassGradient)" stroke="#c0c4d0" stroke-width="3"/>
+
+    <!-- Пиво -->
+    <rect x="65" y="110" width="80" height="95" rx="7" ry="7"
+          fill="url(#beerGradient)"/>
+
+    <!-- Линия уровня -->
+    <rect x="65" y="110" width="80" height="6"
+          fill="#ffd86a" opacity="0.8"/>
+
+    <!-- Отблеск -->
+    <path d="
+      M 72 88
+      C 68 115, 68 155, 72 200
+      C 76 195, 78 190, 80 185
+      C 78 150, 78 120, 80 95
+      Z"
+      fill="white" opacity="0.38"/>
+
+    <!-- Вертикальные блики -->
+    <rect x="100" y="90" width="6" height="118"
+          fill="white" opacity="0.14"/>
+    <rect x="118" y="90" width="4" height="118"
+          fill="white" opacity="0.08"/>
+
+    <!-- Пена -->
+    <g transform="translate(0, -5)">
+      <rect x="62" y="80" width="86" height="35" rx="18" ry="18"
+            fill="#ffffff" />
+
+      <circle cx="70" cy="98" r="12" fill="#ffffff"/>
+      <circle cx="88" cy="90" r="14" fill="#ffffff"/>
+      <circle cx="108" cy="96" r="16" fill="#ffffff"/>
+      <circle cx="130" cy="88" r="13" fill="#ffffff"/>
+      <circle cx="146" cy="96" r="11" fill="#ffffff"/>
+
+      <ellipse cx="105" cy="108" rx="35" ry="8" fill="#e4e4f0" opacity="0.5"/>
+    </g>
+
+    <!-- Пузырьки -->
+    <g id="bubbles">
+
+      <!-- пузырёк 1 -->
+      <circle cx="90" cy="145" r="2.2" fill="#ffe8a0" opacity="0.9">
+        <animate attributeName="cy" values="145;115" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+        <animate attributeName="opacity" values="1;0" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+      </circle>
+
+      <!-- пузырёк 2 -->
+      <circle cx="110" cy="155" r="2.7" fill="#ffe8a0" opacity="0.85">
+        <animate attributeName="cy" values="155;115" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+        <animate attributeName="opacity" values="1;0" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+      </circle>
+
+      <!-- пузырёк 3 -->
+      <circle cx="100" cy="170" r="2.0" fill="#ffe8a0" opacity="0.8">
+        <animate attributeName="cy" values="170;115" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+        <animate attributeName="opacity" values="1;0" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+      </circle>
+
+      <!-- пузырёк 4 -->
+      <circle cx="120" cy="140" r="2.4" fill="#ffe8a0" opacity="0.88">
+        <animate attributeName="cy" values="140;115" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+        <animate attributeName="opacity" values="1;0" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+      </circle>
+
+      <!-- пузырёк 5 -->
+      <circle cx="130" cy="165" r="2.1" fill="#ffe8a0" opacity="0.82">
+        <animate attributeName="cy" values="165;115" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+        <animate attributeName="opacity" values="1;0" dur="1.2s" begin="shake.end" repeatCount="1" fill="freeze"/>
+      </circle>
+
+      <!-- маркер конца пузырьков -->
+      <animate id="bubblesEnd" attributeName="opacity" values="1;1" dur="1.2s" begin="shake.end"/>
+    </g>
+
+  </g>
+
+  <defs>
+    <linearGradient id="glassGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#fdfdff"/>
+      <stop offset="40%" stop-color="#f2f5ff"/>
+      <stop offset="100%" stop-color="#dde2f0"/>
+    </linearGradient>
+
+    <linearGradient id="beerGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ffe699"/>
+      <stop offset="40%"  stop-color="#ffd15c"/>
+      <stop offset="80%"  stop-color="#f0a72e"/>
+      <stop offset="100%" stop-color="#d3831e"/>
+    </linearGradient>
+  </defs>
+
+</svg>

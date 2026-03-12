@@ -1,0 +1,37 @@
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Группа для вращения всей карточки -->
+  <g transform="rotate(0,30,30)">
+    <!-- Закруглённый фон с анимацией цвета заливки и рамки -->
+    <rect x="2" y="2" width="56" height="56" rx="10" ry="10"
+          fill="black" stroke="#FFE433" stroke-width="2">
+      <!-- Анимация смены цвета фона -->
+      <animate attributeName="fill"
+               values="black;black;black;#666666;#666666"
+               keyTimes="0; 0.3; 0.6; 0.8; 1"
+               dur="0.6s"
+               fill="freeze" />
+      <!-- Анимация смены цвета рамки -->
+      <animate attributeName="stroke"
+               values="#FFE433;#FFE433;#FFE433;#666666;#666666"
+               keyTimes="0; 0.3; 0.6; 0.8; 1"
+               dur="0.6s"
+               fill="freeze" />
+    </rect>
+
+    <!-- Центрированная белая звезда -->
+    <text x="50%" y="55%" font-family="Verdana" font-size="40" fill="white"
+          dominant-baseline="middle" text-anchor="middle">
+      *
+    </text>
+
+    <!-- Анимация вращения -->
+    <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="rotate"
+                      values="0 30 30; 5 30 30; -5 30 30; 3 30 30; -3 30 30; 0 30 30"
+                      keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
+                      dur="0.8s"
+                      repeatCount="1"
+                      fill="freeze" />
+  </g>
+</svg>

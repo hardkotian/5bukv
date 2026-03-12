@@ -1,0 +1,37 @@
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Группа для масштабирования всей карточки -->
+  <g transform="scale(1)" transform-origin="50% 50%">
+    <!-- Закруглённый чёрный фон с жёлтой рамкой -->
+    <rect x="2" y="2" width="56" height="56" rx="10" ry="10"
+          fill="black" stroke="#FFE433" stroke-width="2">
+      <!-- Анимация смены цвета фона на жёлтый -->
+      <animate attributeName="fill"
+               values="black;black;black;#FFE433;#FFE433"
+               keyTimes="0; 0.3; 0.6; 0.8; 1"
+               dur="0.8s"
+               fill="freeze" />
+    </rect>
+    
+    <!-- Центрированная буква "*" -->
+    <text x="50%" y="55%" font-family="Verdana" font-size="40" fill="white"
+          dominant-baseline="middle" text-anchor="middle">
+      *
+      <!-- Анимация смены цвета буквы на чёрный -->
+      <animate attributeName="fill"
+               values="white;white;white;black;black"
+               keyTimes="0; 0.3; 0.6; 0.8; 1"
+               dur="0.8s"
+               fill="freeze" />
+    </text>
+
+    <!-- Мягкая анимация сворачивания и разворачивания -->
+    <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="scale"
+                      values="1; 0.5; 1.05; 0.98; 1"
+                      keyTimes="0; 0.3; 0.5; 0.7; 1"
+                      dur="0.8s"
+                      repeatCount="1"
+                      fill="freeze" />
+  </g>
+</svg>

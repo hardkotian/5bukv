@@ -1,0 +1,26 @@
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Закруглённый чёрный фон с жёлтой рамкой -->
+  <rect x="2" y="2" width="56" height="56" rx="10" ry="10"
+        fill="black" stroke="#FFE433" stroke-width="2" />
+
+  <!-- Центрированная буква "*" с анимацией покачивания и смены цвета -->
+  <text x="50%" y="55%" font-family="Verdana" font-size="40" fill="white"
+        dominant-baseline="middle" text-anchor="middle">
+    *
+    <!-- Анимация покачивания -->
+    <animateTransform attributeName="transform"
+                      attributeType="XML"
+                      type="translate"
+                      values="0,0; -2,0; 2,0; -1,0; 1,0; 0,0"
+                      keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
+                      dur="0.6s"
+                      repeatCount="2" />
+    <!-- Анимация смены цвета -->
+    <animate attributeName="fill"
+             values="white;red;white"
+             keyTimes="0; 0.5; 1"
+             dur="1.2s"
+             repeatCount="1"
+             fill="freeze" />
+  </text>
+</svg>
